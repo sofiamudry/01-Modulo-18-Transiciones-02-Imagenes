@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    font-family: 'raleway';
+    overflow: hidden;
+    background-color: #333;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    height: 70%;
+    width: 80%;
+    overflow: hidden;
+}
+
+.subcontainer {
+    height: 110%;
+    width: 110%;
+    background-image: url(../images/lily.jpg);
+    background-size: 110%;
+    position: relative;
+    /* tengo que poner transition tranform aca para que me tome el duration */
+    transition: transform .3s;
+}
+
+.subcontainer:hover {
+    /* aca tengo que poner transform translate para que tome el duration */
+    transform: translate(20px);
+}
+
+.subcontainer:hover .content {
+    background-color: rgba(255, 255, 255, 0);
+    transition-duration: .5s;
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    background-color: rgba(146, 182, 229, .4);
+    transition: background-color;
+}
+
+.title, .subtitle {
+    width: 100%;
+    color: #fff;
+    padding: 0px 50px;
+    font-weight: 300;
+    position: relative;
+    transition: transform .5s;
+}
+
+.subtitle {
+    visibility: hidden;
+}
+
+.subcontainer:hover .title {
+    transform: translate(-20px, -100px);
+}
+
+.subcontainer:hover .subtitle {
+    transform: translate(-20px, -100px);
+    visibility: visible;
+}
